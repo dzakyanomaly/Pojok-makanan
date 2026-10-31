@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Donasi Pangan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pm-cream': '#FAF6F0',
+              'pm-green': '#2D6A4F',
+              'pm-text': '#24201D',
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+            boxShadow: {
+              '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+              xs: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="donasikan.css" />
+  </head>
+  <body class="bg-[#FAF6F0] text-[#24201D] min-h-screen flex flex-col justify-between selection:bg-[#2D6A4F] selection:text-white">
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="sticky top-0 z-40 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="../Homepage/Homepage.html" class="flex items-center gap-3 text-left group">
+            <div class="w-11 h-11 rounded-2xl bg-[#2D6A4F] flex items-center justify-center text-white shadow-md shadow-[#2D6A4F]/20 group-hover:bg-[#1B4332] transition">
+              <i data-lucide="utensils-crossed" class="w-6 h-6 text-[#E8F5E9]"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-serif text-2xl font-bold tracking-tight text-[#24201D]">
+                  Pojok<span class="text-[#2D6A4F]">Makanan</span>
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2D6A4F]/10 text-[#2D6A4F]">
+                  Peduli Pangan
+                </span>
+              </div>
+              <p class="text-xs text-[#6C6259] hidden sm:block">Berbagi Rasa, Selamatkan Surplus Pangan</p>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+            <a href="../Homepage/Homepage.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Beranda
+            </a>
+            <a href="../Jelajahi/jelajahi.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Jelajahi
+            </a>
+            <a href="donasikan.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition bg-[#2D6A4F] text-white shadow-xs">
+              Donasi
+            </a>
+            <a href="../Edukasi/edukasi.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Edukasi
+            </a>
+            <a href="../Pesan/pesan.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Pesan
+              <span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-amber-500 text-white">1</span>
+            </a>
+            <a href="../Akun/akun.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Akun
+            </a>
+          </nav>
+
+          <!-- Right Action Button -->
+          <div class="hidden sm:flex items-center gap-3">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-[#594A38] bg-[#EFE8DC]/60 px-3 py-1.5 rounded-full border border-[#D9CDBF]/50">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+              <span>Jakarta Selatan</span>
+            </div>
+            <a href="donasikan.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2D6A4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#1B4332] active:scale-95 transition shadow-xs">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>Beri Donasi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#FAF6F0]/95 backdrop-blur-lg border-t border-[#E8DFD1] px-2 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+      <div class="flex items-center justify-around">
+        <a href="../Homepage/Homepage.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="home" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Beranda</span>
+        </a>
+        <a href="../Jelajahi/jelajahi.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="compass" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Jelajahi</span>
+        </a>
+        <a href="donasikan.html" class="flex flex-col items-center -mt-6 group">
+          <div class="w-13 h-13 rounded-full flex items-center justify-center text-white bg-[#2D6A4F] shadow-lg transition-transform active:scale-90 text-2xl font-bold">
+            <i data-lucide="plus" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold mt-1 text-[#2D6A4F] font-bold">Donasi</span>
+        </a>
+        <a href="../Edukasi/edukasi.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Edukasi</span>
+        </a>
+        <a href="../Pesan/pesan.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Pesan</span>
+        </a>
+        <a href="../Akun/akun.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Akun</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-8 pb-20">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-bold uppercase tracking-wider text-[#2D6A4F]">Salurkan Berkah Pangan</span>
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#24201D]">
+          Pojok Donasi & Solidaritas Pangan
+        </h1>
+        <p class="text-sm text-[#6C6259]">
+          Pilih antara mendonasikan surplus makanan siap konsumsi atau mendukung pengadaan paket pangan komunitas.
+        </p>
+        <div class="inline-flex items-center p-1.5 bg-white border border-[#E8DFD1] rounded-2xl shadow-xs mt-4">
+          <button
+            id="tab-donate-food"
+            class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer bg-[#2D6A4F] text-white shadow-sm"
+          >
+            <i data-lucide="utensils" class="w-4 h-4"></i>
+            <span>Donasi Makanan Surplus (Gratis)</span>
+          </button>
+          <button
+            id="tab-donate-fund"
+            class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F]"
+          >
+            <i data-lucide="heart" class="w-4 h-4"></i>
+            <span>Paket Sembako & Dana Pangan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab A: Surplus Food Form -->
+      <div id="donate-food-container" class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 shadow-xs">
+          <form id="food-donation-form" class="space-y-5">
+            <div class="border-b border-[#F0EAE1] pb-3">
+              <h2 class="font-serif text-xl font-bold text-[#24201D]">
+                Formulir Pendaftaran Makanan Surplus
+              </h2>
+              <p class="text-xs text-[#6C6259]">
+                Pastikan makanan dalam kondisi higienis dan layak konsumsi.
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                Nama Makanan <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="input-food-title"
+                required
+                placeholder="Contoh: 20 Box Nasi Ayam Bakar & Lalapan"
+                class="w-full px-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+              />
+            </div>
+
+            <!-- Upload / Kamera Foto Makanan -->
+            <div>
+              <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                Foto Makanan <span class="text-red-500">*</span>
+              </label>
+              <div id="photo-dropzone" class="border-2 border-dashed border-[#D9CDBF] rounded-2xl p-4 sm:p-6 text-center bg-[#FAF6F0]/40 hover:bg-[#FAF6F0] transition">
+                <!-- Placeholder State (Sebelum foto diunggah) -->
+                <div id="photo-placeholder-box" class="space-y-3">
+                  <div class="w-12 h-12 rounded-full bg-[#E8F5E9] text-[#2D6A4F] flex items-center justify-center mx-auto shadow-inner">
+                    <i data-lucide="camera" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs sm:text-sm font-bold text-[#24201D]">Ambil Foto Kamera atau Unggah Gambar</p>
+                    <p class="text-[11px] text-[#6C6259] mt-0.5">Ambil foto langsung makanan untuk ditampilkan di Jelajahi & Beranda</p>
+                  </div>
+                  <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+                    <!-- Tombol Kamera -->
+                    <label for="input-camera" class="px-4 py-2 rounded-xl bg-[#2D6A4F] text-white text-xs font-semibold hover:bg-[#1B4332] cursor-pointer inline-flex items-center gap-1.5 transition shadow-2xs">
+                      <i data-lucide="camera" class="w-4 h-4"></i>
+                      <span>Gunakan Kamera</span>
+                    </label>
+                    <input type="file" id="input-camera" accept="image/*" capture="environment" class="hidden" />
+
+                    <!-- Tombol File Galeri -->
+                    <label for="input-file" class="px-4 py-2 rounded-xl bg-white border border-[#D9CDBF] text-[#4A4036] text-xs font-semibold hover:bg-[#FAF6F0] cursor-pointer inline-flex items-center gap-1.5 transition shadow-2xs">
+                      <i data-lucide="image" class="w-4 h-4"></i>
+                      <span>Pilih dari Galeri</span>
+                    </label>
+                    <input type="file" id="input-file" accept="image/*" class="hidden" />
+                  </div>
+                </div>
+
+                <!-- Preview State (Muncul setelah foto diambil/dipilih) -->
+                <div id="photo-preview-box" class="hidden space-y-3">
+                  <div class="relative max-w-sm mx-auto rounded-xl overflow-hidden border border-[#D9CDBF] shadow-sm">
+                    <img id="food-photo-preview" src="" alt="Preview Makanan" class="w-full h-48 sm:h-56 object-cover" />
+                    <div class="absolute bottom-2 left-2 bg-black/60 backdrop-blur-xs text-white text-[11px] px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                      <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                      <span>Foto siap diunggah</span>
+                    </div>
+                  </div>
+                  <div class="flex justify-center gap-2">
+                    <label for="input-file" class="px-3 py-1.5 rounded-lg border border-[#D9CDBF] text-xs font-semibold text-[#594A38] bg-white hover:bg-[#FAF6F0] cursor-pointer inline-flex items-center gap-1">
+                      <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                      <span>Ganti Foto</span>
+                    </label>
+                    <button type="button" id="btn-remove-photo" class="px-3 py-1.5 rounded-lg border border-red-200 text-xs font-semibold text-red-600 bg-red-50 hover:bg-red-100 cursor-pointer inline-flex items-center gap-1">
+                      <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                      <span>Hapus Foto</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                  Kategori Pangan
+                </label>
+                <select
+                  id="input-food-category"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+                >
+                  <option value="makanan_berat">Makanan Siap Santap (Nasi/Lauk)</option>
+                  <option value="roti_kue">Roti & Pastry</option>
+                  <option value="sayur_buah">Sayur & Buah Tani</option>
+                  <option value="sembako">Sembako & Pangan Pokok</option>
+                  <option value="minuman">Minuman Sehat</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                  Kondisi Saat Ini
+                </label>
+                <select
+                  id="input-food-condition"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+                >
+                  <option value="Baru Masak (Hangat)">Baru Masak (Hangat)</option>
+                  <option value="Kue / Roti Hari Ini">Kue / Roti Hari Ini</option>
+                  <option value="Segar Belum Diolah">Segar Belum Diolah (Sayur/Buah)</option>
+                  <option value="Kemasan Masih Utuh">Kemasan Masih Utuh / Bersegel</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                  Jumlah Porsi
+                </label>
+                <input
+                  type="number"
+                  id="input-food-portions"
+                  min="1"
+                  max="500"
+                  value="10"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                  Perkiraan Berat (kg)
+                </label>
+                <input
+                  type="number"
+                  id="input-food-weight"
+                  step="0.1"
+                  min="0.1"
+                  value="3.5"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                  Maks. Waktu Konsumsi
+                </label>
+                <select
+                  id="input-food-hours"
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+                >
+                  <option value="3">3 Jam ke depan (Mendesak)</option>
+                  <option value="6">6 Jam ke depan</option>
+                  <option value="12">12 Jam (Hari ini)</option>
+                  <option value="24">24 Jam (Besok)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+                Alamat Lokasi Pengambilan <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="input-food-location"
+                required
+                value="Jl. Tebet Barat Dalam Raya No. 42, Jakarta Selatan"
+                class="w-full px-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+              />
+            </div>
+
+            <div class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-2">
+              <label class="flex items-center gap-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  id="input-food-halal"
+                  checked
+                  class="w-4 h-4 rounded text-[#2D6A4F] focus:ring-[#2D6A4F] border-[#D9CDBF]"
+                />
+                <span class="text-xs sm:text-sm font-semibold text-[#2D6A4F]">
+                  Saya menjamin bahan dan proses makanan ini 100% Halal
+                </span>
+              </label>
+              <label class="flex items-center gap-2 pt-1 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  id="input-food-hygiene"
+                  required
+                  class="w-4 h-4 rounded text-[#2D6A4F] focus:ring-[#2D6A4F] border-[#D9CDBF]"
+                />
+                <span class="text-xs font-bold text-[#24201D]">
+                  Saya menjamin makanan ini bersih, higienis, dan layak konsumsi
+                </span>
+              </label>
+            </div>
+
+            <div class="flex justify-end pt-2">
+              <button
+                type="submit"
+                class="px-8 py-3 rounded-xl bg-[#2D6A4F] text-white text-sm font-bold hover:bg-[#1B4332] active:scale-95 transition shadow-sm cursor-pointer inline-flex items-center gap-2"
+              >
+                <span>Terbitkan Donasi Pangan</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab B: Monetary Package Donation -->
+      <div id="donate-fund-container" class="max-w-3xl mx-auto space-y-6 hidden">
+        <div class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 space-y-6 shadow-xs">
+          <div>
+            <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+              Pilih Paket Kebaikan Pangan
+            </h2>
+            <p class="text-xs sm:text-sm text-[#6C6259]">
+              Donasi Anda digunakan secara transparan untuk memasok bahan pangan segar ke lemari berbagi komunitas.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <button
+              data-amount="25000"
+              data-pkg="Paket Sarapan Berkah"
+              class="fund-card p-4 rounded-2xl border border-[#2D6A4F] bg-[#E8F5E9] text-left transition cursor-pointer"
+            >
+              <div class="text-2xl mb-2">🥣</div>
+              <h3 class="font-bold text-sm text-[#24201D]">Paket Sarapan Berkah</h3>
+              <p class="text-xs text-[#6C6259] mt-1">2 porsi sarapan bergizi untuk dhuafa jalanan.</p>
+              <div class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]">
+                Rp 25.000
+              </div>
+            </button>
+            <button
+              data-amount="50000"
+              data-pkg="Paket Sayur Tani Sehat"
+              class="fund-card p-4 rounded-2xl border border-[#E8DFD1] bg-[#FAF6F0] text-left transition cursor-pointer hover:border-[#2D6A4F]"
+            >
+              <div class="text-2xl mb-2">🥬</div>
+              <h3 class="font-bold text-sm text-[#24201D]">Paket Sayur Tani Sehat</h3>
+              <p class="text-xs text-[#6C6259] mt-1">1 keranjang sayur & tempe tahu segar keluarga.</p>
+              <div class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]">
+                Rp 50.000
+              </div>
+            </button>
+            <button
+              data-amount="100000"
+              data-pkg="Dapur Berbagi Komunitas"
+              class="fund-card p-4 rounded-2xl border border-[#E8DFD1] bg-[#FAF6F0] text-left transition cursor-pointer hover:border-[#2D6A4F]"
+            >
+              <div class="text-2xl mb-2">🍲</div>
+              <h3 class="font-bold text-sm text-[#24201D]">Dapur Komunitas</h3>
+              <p class="text-xs text-[#6C6259] mt-1">10 porsi santap lengkap berprotein untuk warga.</p>
+              <div class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]">
+                Rp 100.000
+              </div>
+            </button>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] flex flex-col sm:flex-row items-center gap-5">
+            <div class="w-24 h-24 bg-white p-2 rounded-xl border border-[#D9CDBF] flex items-center justify-center shrink-0 text-[#2D6A4F]">
+              <i data-lucide="qr-code" class="w-16 h-16"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-[#2D6A4F] uppercase tracking-wide">
+                Siap Bayar via QRIS Semua Bank & E-Wallet
+              </div>
+              <div id="fund-selected-display" class="font-serif text-2xl font-bold text-[#24201D]">
+                Rp 25.000
+              </div>
+              <p class="text-xs text-[#6C6259]">
+                Scan kode QRIS instan dari BCA, Mandiri, BRI, BSI, GoPay, OVO, ShopeePay, atau DANA.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button
+              id="btn-confirm-fund"
+              class="px-8 py-3.5 rounded-xl bg-[#2D6A4F] text-white text-sm font-bold hover:bg-[#1B4332] active:scale-95 transition shadow-sm cursor-pointer inline-flex items-center gap-2"
+            >
+              <span>Konfirmasi Donasi Paket Pangan</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-[#E8DFD1] mt-16 pb-24 md:pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-xl bg-[#2D6A4F] flex items-center justify-center text-white font-bold text-sm">
+                <i data-lucide="utensils" class="w-4 h-4"></i>
+              </div>
+              <span class="font-serif text-lg font-bold text-[#24201D]">
+                Pojok<span class="text-[#2D6A4F]">Makanan</span>
+              </span>
+            </div>
+            <p class="text-xs text-[#6C6259] leading-relaxed">
+              Gerakan akar rumput menghubungkan kelebihan makanan layak konsumsi dengan saudara yang membutuhkan. Bersama cegah food waste demi bumi yang lebih hijau.
+            </p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Halaman</h4>
+            <p class="text-[#6C6259] leading-relaxed">Beranda • Jelajahi Makanan • Donasi Pangan • Pojok Edukasi • Pesan & Akun</p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Komitmen</h4>
+            <p class="text-[#6C6259] leading-relaxed">100% Halal Terverifikasi • SOP Higienitas Pangan • Misi Nol Sampah Pangan 2030</p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Wilayah Jangkauan</h4>
+            <p class="text-[#6C6259] leading-relaxed">Jabodetabek, Bandung, Surabaya, dan terus berkembang di seluruh Indonesia.</p>
+            <div class="pt-2 text-[11px] text-[#7D7166]">© 2026 Pojok Makanan Indonesia.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../common/sharedData.js"></script>
+    <script src="donasikan.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Jelajahi Custom Stylesheet
+   ========================================================================== */
+
+.cat-chip {
+  transition: all 0.2s ease;
+}
+
+.dist-btn {
+  transition: all 0.2s ease;
+}
+
+.food-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.map-pin-pulse {
+  animation: mapPulse 2s infinite;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 106, 79, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(45, 106, 79, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(45, 106, 79, 0);
+  }
+}

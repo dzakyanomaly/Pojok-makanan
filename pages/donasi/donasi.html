@@ -1,0 +1,325 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Component</title>
+  </head>
+  <body>
+<section id="page-donasi" class="page-view space-y-8 pb-16">
+  <div class="text-center max-w-2xl mx-auto space-y-2">
+    <span class="text-xs font-bold uppercase tracking-wider text-[#2D6A4F]"
+      >Salurkan Berkah Pangan</span
+    >
+    <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#24201D]">
+      Pojok Donasi & Solidaritas Pangan
+    </h1>
+    <p class="text-sm text-[#6C6259]">
+      Pilih antara mendonasikan surplus makanan siap konsumsi atau mendukung
+      pengadaan paket pangan komunitas.
+    </p>
+    <div
+      class="inline-flex items-center p-1.5 bg-white border border-[#E8DFD1] rounded-2xl shadow-xs mt-4"
+    >
+      <button
+        id="tab-donate-food"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer bg-[#2D6A4F] text-white shadow-sm"
+      >
+        <i data-lucide="utensils" class="w-4 h-4"></i>
+        <span>Donasi Makanan Surplus (Gratis)</span>
+      </button>
+      <button
+        id="tab-donate-fund"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F]"
+      >
+        <i data-lucide="heart" class="w-4 h-4"></i>
+        <span>Paket Sembako & Dana Pangan</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Tab A: Surplus Food Form -->
+  <div id="donate-food-container" class="max-w-3xl mx-auto">
+    <div
+      class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 shadow-xs"
+    >
+      <form id="food-donation-form" class="space-y-5">
+        <div class="border-b border-[#F0EAE1] pb-3">
+          <h2 class="font-serif text-xl font-bold text-[#24201D]">
+            Formulir Pendaftaran Makanan Surplus
+          </h2>
+          <p class="text-xs text-[#6C6259]">
+            Pastikan makanan dalam kondisi higienis dan layak konsumsi.
+          </p>
+        </div>
+
+        <div>
+          <label
+            class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+          >
+            Nama Makanan <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="input-food-title"
+            required
+            placeholder="Contoh: 20 Box Nasi Ayam Bakar & Lalapan"
+            class="w-full px-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label
+              class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+            >
+              Kategori Pangan
+            </label>
+            <select
+              id="input-food-category"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+            >
+              <option value="makanan_berat">
+                Makanan Siap Santap (Nasi/Lauk)
+              </option>
+              <option value="roti_kue">Roti & Pastry</option>
+              <option value="sayur_buah">Sayur & Buah Tani</option>
+              <option value="sembako">Sembako & Pangan Pokok</option>
+              <option value="minuman">Minuman Sehat</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+            >
+              Kondisi Saat Ini
+            </label>
+            <select
+              id="input-food-condition"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+            >
+              <option value="Baru Masak (Hangat)">Baru Masak (Hangat)</option>
+              <option value="Kue / Roti Hari Ini">Kue / Roti Hari Ini</option>
+              <option value="Segar Belum Diolah">
+                Segar Belum Diolah (Sayur/Buah)
+              </option>
+              <option value="Kemasan Masih Utuh">
+                Kemasan Masih Utuh / Bersegel
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <label
+              class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+            >
+              Jumlah Porsi
+            </label>
+            <input
+              type="number"
+              id="input-food-portions"
+              min="1"
+              max="1000"
+              value="1"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+            >
+              Perkiraan Berat (kg)
+            </label>
+            <input
+              type="number"
+              id="input-food-weight"
+              step="0.1"
+              min="1"
+              value="1"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+            >
+              Maks. Waktu Konsumsi
+            </label>
+            <select
+              id="input-food-hours"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+            >
+              <option value="3">3 Jam ke depan (Mendesak)</option>
+              <option value="6">6 Jam ke depan</option>
+              <option value="12">12 Jam (Hari ini)</option>
+              <option value="24">24 Jam (Besok)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label
+            class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5"
+          >
+            Alamat Lokasi Pengambilan <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="input-food-location"
+            required
+            value="Jl. Tebet Barat Dalam Raya No. 42, Jakarta Selatan"
+            class="w-full px-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+          />
+        </div>
+
+        <div
+          class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-2"
+        >
+          <label class="flex items-center gap-2 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              id="input-food-halal"
+              checked
+              class="w-4 h-4 rounded text-[#2D6A4F] focus:ring-[#2D6A4F] border-[#D9CDBF]"
+            />
+            <span class="text-xs sm:text-sm font-semibold text-[#2D6A4F]">
+              Saya menjamin bahan dan proses makanan ini 100% Halal
+            </span>
+          </label>
+          <label
+            class="flex items-center gap-2 pt-1 cursor-pointer select-none"
+          >
+            <input
+              type="checkbox"
+              id="input-food-hygiene"
+              required
+              class="w-4 h-4 rounded text-[#2D6A4F] focus:ring-[#2D6A4F] border-[#D9CDBF]"
+            />
+            <span class="text-xs font-bold text-[#24201D]">
+              Saya menjamin makanan ini bersih, higienis, dan layak konsumsi
+            </span>
+          </label>
+        </div>
+
+        <div class="flex justify-end pt-2">
+          <button
+            type="submit"
+            class="px-8 py-3 rounded-xl bg-[#2D6A4F] text-white text-sm font-bold hover:bg-[#1B4332] active:scale-95 transition shadow-sm cursor-pointer inline-flex items-center gap-2"
+          >
+            <span>Terbitkan Donasi Pangan</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tab B: Monetary Package Donation -->
+  <div id="donate-fund-container" class="max-w-3xl mx-auto space-y-6 hidden">
+    <div
+      class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 space-y-6 shadow-xs"
+    >
+      <div>
+        <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+          Pilih Paket Kebaikan Pangan
+        </h2>
+        <p class="text-xs sm:text-sm text-[#6C6259]">
+          Donasi Anda digunakan secara transparan untuk memasok bahan pangan
+          segar ke lemari berbagi komunitas.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <button
+          data-amount="25000"
+          data-pkg="Paket Sarapan Berkah"
+          class="fund-card p-4 rounded-2xl border border-[#2D6A4F] bg-[#E8F5E9] text-left transition cursor-pointer"
+        >
+          <div class="text-2xl mb-2">ðŸ¥£</div>
+          <h3 class="font-bold text-sm text-[#24201D]">Paket Sarapan Berkah</h3>
+          <p class="text-xs text-[#6C6259] mt-1">
+            2 porsi sarapan bergizi untuk dhuafa jalanan.
+          </p>
+          <div
+            class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]"
+          >
+            Rp 25.000
+          </div>
+        </button>
+        <button
+          data-amount="50000"
+          data-pkg="Paket Sayur Tani Sehat"
+          class="fund-card p-4 rounded-2xl border border-[#E8DFD1] bg-[#FAF6F0] text-left transition cursor-pointer hover:border-[#2D6A4F]"
+        >
+          <div class="text-2xl mb-2">ðŸ¥¬</div>
+          <h3 class="font-bold text-sm text-[#24201D]">
+            Paket Sayur Tani Sehat
+          </h3>
+          <p class="text-xs text-[#6C6259] mt-1">
+            1 keranjang sayur & tempe tahu segar keluarga.
+          </p>
+          <div
+            class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]"
+          >
+            Rp 50.000
+          </div>
+        </button>
+        <button
+          data-amount="100000"
+          data-pkg="Dapur Berbagi Komunitas"
+          class="fund-card p-4 rounded-2xl border border-[#E8DFD1] bg-[#FAF6F0] text-left transition cursor-pointer hover:border-[#2D6A4F]"
+        >
+          <div class="text-2xl mb-2">ðŸ²</div>
+          <h3 class="font-bold text-sm text-[#24201D]">Dapur Komunitas</h3>
+          <p class="text-xs text-[#6C6259] mt-1">
+            10 porsi santap lengkap berprotein untuk warga.
+          </p>
+          <div
+            class="mt-4 pt-2 border-t border-[#D9CDBF] font-bold text-sm text-[#2D6A4F]"
+          >
+            Rp 100.000
+          </div>
+        </button>
+      </div>
+
+      <div
+        class="p-5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] flex flex-col sm:flex-row items-center gap-5"
+      >
+        <div
+          class="w-24 h-24 bg-white p-2 rounded-xl border border-[#D9CDBF] flex items-center justify-center shrink-0 text-[#2D6A4F]"
+        >
+          <i data-lucide="qr-code" class="w-16 h-16"></i>
+        </div>
+        <div>
+          <div class="text-xs font-bold text-[#2D6A4F] uppercase tracking-wide">
+            Siap Bayar via QRIS Semua Bank & E-Wallet
+          </div>
+          <div
+            id="fund-selected-display"
+            class="font-serif text-2xl font-bold text-[#24201D]"
+          >
+            Rp 25.000
+          </div>
+          <p class="text-xs text-[#6C6259]">
+            Scan kode QRIS instan dari BCA, Mandiri, BRI, BSI, GoPay, OVO,
+            ShopeePay, atau DANA.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          id="btn-confirm-fund"
+          class="px-8 py-3.5 rounded-xl bg-[#2D6A4F] text-white text-sm font-bold hover:bg-[#1B4332] active:scale-95 transition shadow-sm cursor-pointer inline-flex items-center gap-2"
+        >
+          <span>Konfirmasi Donasi Paket Pangan</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </body>
+</html>

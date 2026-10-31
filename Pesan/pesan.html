@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Pesan & Chat</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'pm-cream': '#FAF6F0',
+              'pm-green': '#2D6A4F',
+              'pm-text': '#24201D',
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+            boxShadow: {
+              '2xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
+              xs: '0 1px 3px 0 rgba(0, 0, 0, 0.05)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="pesan.css" />
+  </head>
+  <body class="bg-[#FAF6F0] text-[#24201D] min-h-screen flex flex-col justify-between selection:bg-[#2D6A4F] selection:text-white">
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header class="sticky top-0 z-40 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="../Homepage/Homepage.html" class="flex items-center gap-3 text-left group">
+            <div class="w-11 h-11 rounded-2xl bg-[#2D6A4F] flex items-center justify-center text-white shadow-md shadow-[#2D6A4F]/20 group-hover:bg-[#1B4332] transition">
+              <i data-lucide="utensils-crossed" class="w-6 h-6 text-[#E8F5E9]"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span class="font-serif text-2xl font-bold tracking-tight text-[#24201D]">
+                  Pojok<span class="text-[#2D6A4F]">Makanan</span>
+                </span>
+                <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2D6A4F]/10 text-[#2D6A4F]">
+                  Peduli Pangan
+                </span>
+              </div>
+              <p class="text-xs text-[#6C6259] hidden sm:block">Berbagi Rasa, Selamatkan Surplus Pangan</p>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+            <a href="../Homepage/Homepage.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Beranda
+            </a>
+            <a href="../Jelajahi/jelajahi.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Jelajahi
+            </a>
+            <a href="../Donasikan/donasikan.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Donasi
+            </a>
+            <a href="../Edukasi/edukasi.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Edukasi
+            </a>
+            <a href="pesan.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition bg-[#2D6A4F] text-white shadow-xs">
+              Pesan
+              <span class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-amber-500 text-white">1</span>
+            </a>
+            <a href="../Akun/akun.html" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60">
+              Akun
+            </a>
+          </nav>
+
+          <!-- Right Action Button -->
+          <div class="hidden sm:flex items-center gap-3">
+            <div class="flex items-center gap-1.5 text-xs font-medium text-[#594A38] bg-[#EFE8DC]/60 px-3 py-1.5 rounded-full border border-[#D9CDBF]/50">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+              <span>Jakarta Selatan</span>
+            </div>
+            <a href="../Donasikan/donasikan.html" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2D6A4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#1B4332] active:scale-95 transition shadow-xs">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>Beri Donasi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#FAF6F0]/95 backdrop-blur-lg border-t border-[#E8DFD1] px-2 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+      <div class="flex items-center justify-around">
+        <a href="../Homepage/Homepage.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="home" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Beranda</span>
+        </a>
+        <a href="../Jelajahi/jelajahi.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="compass" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Jelajahi</span>
+        </a>
+        <a href="../Donasikan/donasikan.html" class="flex flex-col items-center -mt-6 group">
+          <div class="w-13 h-13 rounded-full flex items-center justify-center text-white bg-[#2D6A4F] shadow-lg transition-transform active:scale-90 text-2xl font-bold">
+            <i data-lucide="plus" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold mt-1 text-[#6C6259]">Donasi</span>
+        </a>
+        <a href="../Edukasi/edukasi.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Edukasi</span>
+        </a>
+        <a href="pesan.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#2D6A4F]">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-bold mt-0.5">Pesan</span>
+        </a>
+        <a href="../Akun/akun.html" class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Akun</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-4 pb-20">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-[#2D6A4F]">Pusat Koordinasi Pangan</span>
+        <h1 class="font-serif text-3xl font-bold text-[#24201D]">Pesan & Chat</h1>
+        <p class="text-xs sm:text-sm text-[#6C6259]">
+          Komunikasi langsung dengan pemberi donasi, pengelola lemari berbagi, dan relawan kurir.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-[#E8DFD1] shadow-xs overflow-hidden grid grid-cols-1 md:grid-cols-12 min-h-[580px] h-[72vh]">
+        <!-- Left side: chat threads list -->
+        <div id="chat-thread-list" class="md:col-span-5 lg:col-span-4 border-r border-[#E8DFD1] flex flex-col bg-[#FAF6F0]/40 overflow-y-auto divide-y divide-[#F0EAE1]">
+          <!-- Populated in pesan.js -->
+        </div>
+
+        <!-- Right side: active chat conversation -->
+        <div class="md:col-span-7 lg:col-span-8 flex flex-col bg-white">
+          <div id="chat-header" class="p-3.5 sm:p-4 border-b border-[#E8DFD1] bg-[#FAF6F0]/80 flex items-center justify-between gap-3">
+            <!-- Populated in pesan.js -->
+          </div>
+          <div id="chat-messages-container" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-3 bg-[#FCFAF6]">
+            <!-- Populated in pesan.js -->
+          </div>
+          <!-- Quick Reply Chips -->
+          <div class="px-4 py-2 bg-[#FAF6F0] border-t border-[#E8DFD1] flex items-center gap-2 overflow-x-auto scrollbar-none">
+            <button class="quick-reply-btn px-2.5 py-1 rounded-full bg-white border border-[#D9CDBF] text-[11px] text-[#594A38] hover:border-[#2D6A4F] whitespace-nowrap cursor-pointer">
+              Saya sedang dalam perjalanan ke titik ambil
+            </button>
+            <button class="quick-reply-btn px-2.5 py-1 rounded-full bg-white border border-[#D9CDBF] text-[11px] text-[#594A38] hover:border-[#2D6A4F] whitespace-nowrap cursor-pointer">
+              Apakah makanannya masih tersedia?
+            </button>
+            <button class="quick-reply-btn px-2.5 py-1 rounded-full bg-white border border-[#D9CDBF] text-[11px] text-[#594A38] hover:border-[#2D6A4F] whitespace-nowrap cursor-pointer">
+              Terima kasih banyak, berkah selalu!
+            </button>
+          </div>
+          <!-- Chat Input -->
+          <div class="p-3 sm:p-4 bg-white border-t border-[#E8DFD1] flex items-center gap-2">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Ketik pesan konfirmasi pengambilan atau pertanyaan..."
+              class="flex-1 px-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/60 text-xs sm:text-sm text-[#24201D] focus:outline-none focus:ring-2 focus:ring-[#2D6A4F]"
+            />
+            <button
+              id="btn-send-chat"
+              class="p-2.5 px-4 rounded-xl bg-[#2D6A4F] text-white hover:bg-[#1B4332] active:scale-95 transition cursor-pointer shadow-xs text-xs font-bold inline-flex items-center gap-1.5"
+            >
+              <span>Kirim</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-[#E8DFD1] mt-16 pb-24 md:pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-xl bg-[#2D6A4F] flex items-center justify-center text-white font-bold text-sm">
+                <i data-lucide="utensils" class="w-4 h-4"></i>
+              </div>
+              <span class="font-serif text-lg font-bold text-[#24201D]">
+                Pojok<span class="text-[#2D6A4F]">Makanan</span>
+              </span>
+            </div>
+            <p class="text-xs text-[#6C6259] leading-relaxed">
+              Gerakan akar rumput menghubungkan kelebihan makanan layak konsumsi dengan saudara yang membutuhkan. Bersama cegah food waste demi bumi yang lebih hijau.
+            </p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Halaman</h4>
+            <p class="text-[#6C6259] leading-relaxed">Beranda • Jelajahi Makanan • Donasi Pangan • Pojok Edukasi • Pesan & Akun</p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Komitmen</h4>
+            <p class="text-[#6C6259] leading-relaxed">100% Halal Terverifikasi • SOP Higienitas Pangan • Misi Nol Sampah Pangan 2030</p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">Wilayah Jangkauan</h4>
+            <p class="text-[#6C6259] leading-relaxed">Jabodetabek, Bandung, Surabaya, dan terus berkembang di seluruh Indonesia.</p>
+            <div class="pt-2 text-[11px] text-[#7D7166]">© 2026 Pojok Makanan Indonesia.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../common/sharedData.js"></script>
+    <script src="pesan.js"></script>
+  </body>
+</html>

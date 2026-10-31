@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Beranda</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "pm-cream": "#FAF6F0",
+              "pm-green": "#2D6A4F",
+              "pm-text": "#24201D",
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              serif: ['"Playfair Display"', "serif"],
+            },
+            boxShadow: {
+              "2xs": "0 1px 2px 0 rgba(0, 0, 0, 0.03)",
+              xs: "0 1px 3px 0 rgba(0, 0, 0, 0.05)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="homepage.css" />
+  </head>
+  <body
+    class="bg-[#FAF6F0] text-[#24201D] min-h-screen flex flex-col justify-between selection:bg-[#2D6A4F] selection:text-white"
+  >
+    <!-- ==================== HEADER / NAVBAR ==================== -->
+    <header
+      class="sticky top-0 z-40 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a
+            href="Homepage.html"
+            class="flex items-center gap-3 text-left group"
+          >
+            <div
+              class="w-11 h-11 rounded-2xl bg-[#2D6A4F] flex items-center justify-center text-white shadow-md shadow-[#2D6A4F]/20 group-hover:bg-[#1B4332] transition"
+            >
+              <i
+                data-lucide="utensils-crossed"
+                class="w-6 h-6 text-[#E8F5E9]"
+              ></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <span
+                  class="font-serif text-2xl font-bold tracking-tight text-[#24201D]"
+                >
+                  Pojok<span class="text-[#2D6A4F]">Makanan</span>
+                </span>
+                <span
+                  class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2D6A4F]/10 text-[#2D6A4F]"
+                >
+                  Peduli Pangan
+                </span>
+              </div>
+              <p class="text-xs text-[#6C6259] hidden sm:block">
+                Berbagi Rasa, Selamatkan Surplus Pangan
+              </p>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+            <a
+              href="Homepage.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition bg-[#2D6A4F] text-white shadow-xs"
+            >
+              Beranda
+            </a>
+            <a
+              href="../Jelajahi/jelajahi.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+            >
+              Jelajahi
+            </a>
+            <a
+              href="../Donasikan/donasikan.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+            >
+              Donasi
+            </a>
+            <a
+              href="../Edukasi/edukasi.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+            >
+              Edukasi
+            </a>
+            <a
+              href="../Pesan/pesan.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+            >
+              Pesan
+              <span
+                class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-amber-500 text-white"
+                >1</span
+              >
+            </a>
+            <a
+              href="../Akun/akun.html"
+              class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+            >
+              Akun
+            </a>
+          </nav>
+
+          <!-- Right Action Button -->
+          <div class="hidden sm:flex items-center gap-3">
+            <div
+              class="flex items-center gap-1.5 text-xs font-medium text-[#594A38] bg-[#EFE8DC]/60 px-3 py-1.5 rounded-full border border-[#D9CDBF]/50"
+            >
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+              <span>Jakarta Selatan</span>
+            </div>
+            <a
+              href="../Donasikan/donasikan.html"
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2D6A4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#1B4332] active:scale-95 transition shadow-xs"
+            >
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>Beri Donasi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav
+      class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#FAF6F0]/95 backdrop-blur-lg border-t border-[#E8DFD1] px-2 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]"
+    >
+      <div class="flex items-center justify-around">
+        <a
+          href="Homepage.html"
+          class="flex flex-col items-center py-1 px-2 rounded-xl text-[#2D6A4F]"
+        >
+          <i data-lucide="home" class="w-5 h-5"></i>
+          <span class="text-[10px] font-bold mt-0.5">Beranda</span>
+        </a>
+        <a
+          href="../Jelajahi/jelajahi.html"
+          class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]"
+        >
+          <i data-lucide="compass" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Jelajahi</span>
+        </a>
+        <a
+          href="../Donasikan/donasikan.html"
+          class="flex flex-col items-center -mt-6 group"
+        >
+          <div
+            class="w-13 h-13 rounded-full flex items-center justify-center text-white bg-[#2D6A4F] shadow-lg transition-transform active:scale-90 text-2xl font-bold"
+          >
+            <i data-lucide="plus" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold mt-1 text-[#6C6259]"
+            >Donasi</span
+          >
+        </a>
+        <a
+          href="../Edukasi/edukasi.html"
+          class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]"
+        >
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Edukasi</span>
+        </a>
+        <a
+          href="../Pesan/pesan.html"
+          class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]"
+        >
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Pesan</span>
+        </a>
+        <a
+          href="../Akun/akun.html"
+          class="flex flex-col items-center py-1 px-2 rounded-xl text-[#7D7166]"
+        >
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span class="text-[10px] font-medium mt-0.5">Akun</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main
+      class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-12 pb-20"
+    >
+      <!-- Hero Banner -->
+      <div
+        class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#F4EFE6] via-[#FAF6F0] to-[#EAE2D5] border border-[#E5DACB] p-6 sm:p-10 lg:p-12 shadow-sm"
+      >
+        <div
+          class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+        >
+          <div class="lg:col-span-7 space-y-6">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-[#2D6A4F]/20 text-xs font-semibold text-[#2D6A4F] shadow-xs"
+            >
+              <i data-lucide="leaf" class="w-4 h-4 text-emerald-600"></i>
+              <span>Gerakan Peduli Pangan & Zero Food Waste</span>
+            </div>
+            <h1
+              class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#24201D] leading-[1.2]"
+            >
+              Setiap Porsi Punya Cerita, Jangan Biarkan Berakhir Jadi
+              <span
+                class="text-[#2D6A4F] underline decoration-[#52B788]/40 decoration-wavy underline-offset-6"
+              >
+                Sampah Pangan
+              </span>
+            </h1>
+            <p
+              class="text-base sm:text-lg text-[#594A38] leading-relaxed max-w-2xl"
+            >
+              Salurkan surplus makanan dari katering, restoran, kebun, dan dapur
+              rumah tangga Anda ke komunitas yang membutuhkan atau temukan
+              lemari berbagi terdekat di sekitar Anda.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="../Donasikan/donasikan.html"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#2D6A4F] text-white font-semibold text-sm hover:bg-[#1B4332] active:scale-95 transition shadow-md shadow-[#2D6A4F]/20"
+              >
+                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                <span>Mulai Donasi Makanan</span>
+              </a>
+              <a
+                href="../Jelajahi/jelajahi.html"
+                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-[#D9CDBF] text-[#3D332A] font-semibold text-sm hover:bg-[#F5EFEB] hover:border-[#2D6A4F] active:scale-95 transition"
+              >
+                <span>Jelajahi Makanan Tersedia →</span>
+              </a>
+            </div>
+            <!-- Trust Badges -->
+            <div
+              class="pt-4 border-t border-[#E8DFD1] flex flex-wrap items-center gap-6 text-xs text-[#6C6259]"
+            >
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+                <span>Pemeriksaan Kelayakan & Higienitas</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+                <span>100% Gratis Tanpa Pungutan</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+                <span>Jaringan Komunitas & Relawan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Featured Card -->
+          <div class="lg:col-span-5">
+            <div
+              id="hero-featured-card"
+              class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-lg space-y-4 cursor-pointer hover:border-[#2D6A4F] transition"
+            >
+              <!-- Dynamically populated in Homepage.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Impact Bar -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div
+          class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs"
+        >
+          <span class="text-xs font-medium text-[#6C6259]"
+            >Porsi Tersalurkan</span
+          >
+          <div
+            id="home-stat-portions"
+            class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1"
+          >
+            0 Porsi
+          </div>
+          <p
+            id="home-stat-portions-sub"
+            class="text-[11px] text-[#2D6A4F] font-semibold mt-1"
+          >
+            Mulai donasi pertamamu
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs"
+        >
+          <span class="text-xs font-medium text-[#6C6259]"
+            >Makanan Diselamatkan</span
+          >
+          <div
+            id="home-stat-kg"
+            class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1"
+          >
+            0 kg
+          </div>
+          <p
+            id="home-stat-kg-sub"
+            class="text-[11px] text-[#2D6A4F] font-semibold mt-1"
+          >
+            0 kg sampah dicegah
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs"
+        >
+          <span class="text-xs font-medium text-[#6C6259]"
+            >Emisi CO2 Dicegah</span
+          >
+          <div
+            id="home-stat-co2"
+            class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1"
+          >
+            0 kg
+          </div>
+          <p
+            id="home-stat-co2-sub"
+            class="text-[11px] text-[#2D6A4F] font-semibold mt-1"
+          >
+            Emisi karbon rumah kaca
+          </p>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs"
+        >
+          <span class="text-xs font-medium text-[#6C6259]"
+            >Total Donasi Masuk</span
+          >
+          <div
+            id="home-stat-donations"
+            class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1"
+          >
+            0 Donasi
+          </div>
+          <p
+            id="home-stat-donations-sub"
+            class="text-[11px] text-[#2D6A4F] font-semibold mt-1"
+          >
+            Aksi nyata komunitas
+          </p>
+        </div>
+      </div>
+
+      <!-- Urgent Rescue Foods -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+            <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+              Penyelamatan Mendesak (&lt; 5 Jam)
+            </h2>
+          </div>
+          <a
+            href="../Jelajahi/jelajahi.html"
+            class="text-xs sm:text-sm font-semibold text-[#2D6A4F] hover:underline"
+          >
+            Lihat Semua →
+          </a>
+        </div>
+        <div
+          id="urgent-food-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
+          <!-- Dynamically populated in Homepage.js -->
+        </div>
+      </div>
+
+      <!-- Categories Section -->
+      <div class="space-y-4">
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+            Kategori Surplus Pangan
+          </h2>
+          <p class="text-xs sm:text-sm text-[#6C6259]">
+            Pilih jenis pangan yang ingin Anda selamatkan atau donasikan
+          </p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+          <a
+            href="../Jelajahi/jelajahi.html?cat=makanan_berat"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">🍲</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Siap Santap</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Nasi kotak, lauk</p>
+          </a>
+          <a
+            href="../Jelajahi/jelajahi.html?cat=roti_kue"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">🥐</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Roti & Pastry</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Artisan bakery</p>
+          </a>
+          <a
+            href="../Jelajahi/jelajahi.html?cat=sayur_buah"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">🥬</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Sayur & Buah</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Panen tani segar</p>
+          </a>
+          <a
+            href="../Jelajahi/jelajahi.html?cat=sembako"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">📦</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Sembako</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Beras & minyak</p>
+          </a>
+          <a
+            href="../Jelajahi/jelajahi.html?cat=minuman"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">🧃</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Minuman</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Jus segar alami</p>
+          </a>
+          <a
+            href="../Jelajahi/jelajahi.html?cat=katering"
+            class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs"
+          >
+            <div class="text-2xl mb-2">🍽️</div>
+            <h3 class="font-bold text-sm text-[#24201D]">Katering</h3>
+            <p class="text-[11px] text-[#7D7166] mt-0.5">Surplus banquet</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Community Pantries Section -->
+      <div
+        class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 space-y-6 shadow-xs"
+      >
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+        >
+          <div>
+            <div
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8F5E9] text-xs font-semibold text-[#2D6A4F] mb-1.5"
+            >
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+              <span>Titik Fisik Lemari & Kulkas Berbagi</span>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+              Pojok Berbagi Komunitas Terdekat
+            </h2>
+            <p class="text-xs sm:text-sm text-[#6C6259]">
+              Drop-off surplus makanan atau ambil langsung di titik berikut
+            </p>
+          </div>
+          <a
+            href="../Jelajahi/jelajahi.html"
+            class="text-xs sm:text-sm font-semibold text-[#2D6A4F] hover:underline"
+          >
+            Buka Peta Lengkap →
+          </a>
+        </div>
+        <div
+          id="home-pantry-grid"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <!-- Dynamically populated in Homepage.js -->
+        </div>
+      </div>
+    </main>
+
+    <!-- ==================== MODALS ==================== -->
+    <!-- Food Detail Modal -->
+    <div
+      id="food-detail-modal"
+      class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden"
+    >
+      <div
+        class="bg-white rounded-3xl max-w-xl w-full max-h-[90vh] overflow-y-auto border border-[#E8DFD1] shadow-2xl relative"
+      >
+        <button
+          id="btn-close-detail"
+          class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center backdrop-blur-xs cursor-pointer"
+        >
+          ✕
+        </button>
+        <div id="modal-detail-content"></div>
+      </div>
+    </div>
+
+    <!-- Food Claim Modal -->
+    <div
+      id="claim-modal"
+      class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden"
+    >
+      <div
+        class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 border border-[#E8DFD1] shadow-2xl space-y-4"
+      >
+        <div
+          class="flex items-start justify-between border-b border-[#F0EAE1] pb-3"
+        >
+          <div>
+            <span
+              class="text-xs font-bold text-[#2D6A4F] uppercase tracking-wider"
+              >Konfirmasi Pengambilan</span
+            >
+            <h3 class="font-serif text-xl font-bold text-[#24201D] mt-0.5">
+              Klaim Porsi Makanan
+            </h3>
+          </div>
+          <button
+            id="btn-close-claim"
+            class="w-8 h-8 rounded-full bg-[#FAF6F0] text-[#7D7166] hover:text-[#24201D] flex items-center justify-center cursor-pointer"
+          >
+            ✕
+          </button>
+        </div>
+        <div id="claim-modal-body" class="space-y-4"></div>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-white border-t border-[#E8DFD1] mt-16 pb-24 md:pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div
+                class="w-8 h-8 rounded-xl bg-[#2D6A4F] flex items-center justify-center text-white font-bold text-sm"
+              >
+                <i data-lucide="utensils" class="w-4 h-4"></i>
+              </div>
+              <span class="font-serif text-lg font-bold text-[#24201D]">
+                Pojok<span class="text-[#2D6A4F]">Makanan</span>
+              </span>
+            </div>
+            <p class="text-xs text-[#6C6259] leading-relaxed">
+              Gerakan akar rumput menghubungkan kelebihan makanan layak konsumsi
+              dengan saudara yang membutuhkan. Bersama cegah food waste demi
+              bumi yang lebih hijau.
+            </p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">
+              Halaman
+            </h4>
+            <p class="text-[#6C6259] leading-relaxed">
+              Beranda • Jelajahi Makanan • Donasi Pangan • Pojok Edukasi • Pesan
+              & Akun
+            </p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">
+              Komitmen
+            </h4>
+            <p class="text-[#6C6259] leading-relaxed">
+              100% Halal Terverifikasi • SOP Higienitas Pangan • Misi Nol Sampah
+              Pangan 2030
+            </p>
+          </div>
+          <div class="space-y-2 text-xs">
+            <h4 class="font-bold text-[#24201D] uppercase tracking-wider">
+              Wilayah Jangkauan
+            </h4>
+            <p class="text-[#6C6259] leading-relaxed">
+              Jabodetabek, Bandung, Surabaya, dan terus berkembang di seluruh
+              Indonesia.
+            </p>
+            <div class="pt-2 text-[11px] text-[#7D7166]">
+              © 2026 Pojok Makanan Indonesia.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../common/sharedData.js"></script>
+    <script src="Homepage.js"></script>
+  </body>
+</html>

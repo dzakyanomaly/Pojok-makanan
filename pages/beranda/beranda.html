@@ -1,0 +1,199 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Component</title>
+  </head>
+  <body>
+<section id="page-home" class="page-view space-y-12 pb-16">
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#F4EFE6] via-[#FAF6F0] to-[#EAE2D5] border border-[#E5DACB] p-6 sm:p-10 lg:p-12 shadow-sm">
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-[#2D6A4F]/20 text-xs font-semibold text-[#2D6A4F] shadow-xs">
+          <i data-lucide="leaf" class="w-4 h-4 text-emerald-600"></i>
+          <span>Gerakan Peduli Pangan & Zero Food Waste</span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#24201D] leading-[1.2]">
+          Setiap Porsi Punya Cerita, Jangan Biarkan Berakhir Jadi
+          <span class="text-[#2D6A4F] underline decoration-[#52B788]/40 decoration-wavy underline-offset-6">
+            Sampah Pangan
+          </span>
+        </h1>
+        <p class="text-base sm:text-lg text-[#594A38] leading-relaxed max-w-2xl">
+          Salurkan surplus makanan dari katering, restoran, kebun, dan dapur rumah tangga Anda ke komunitas yang membutuhkan atau temukan lemari berbagi terdekat di sekitar Anda.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button
+            id="hero-btn-donate"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#2D6A4F] text-white font-semibold text-sm hover:bg-[#1B4332] active:scale-95 transition shadow-md shadow-[#2D6A4F]/20 cursor-pointer"
+          >
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            <span>Mulai Donasi Makanan</span>
+          </button>
+          <button
+            id="hero-btn-explore"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-[#D9CDBF] text-[#3D332A] font-semibold text-sm hover:bg-[#F5EFEB] hover:border-[#2D6A4F] active:scale-95 transition cursor-pointer"
+          >
+            <span>Jelajahi Makanan Tersedia â†’</span>
+          </button>
+        </div>
+        <!-- Trust Badges -->
+        <div class="pt-4 border-t border-[#E8DFD1] flex flex-wrap items-center gap-6 text-xs text-[#6C6259]">
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>Pemeriksaan Kelayakan & Higienitas</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>100% Gratis Tanpa Pungutan</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <i data-lucide="check" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>Jaringan Komunitas & Relawan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Featured Card -->
+      <div class="lg:col-span-5">
+        <div
+          id="hero-featured-card"
+          class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-lg space-y-4 cursor-pointer hover:border-[#2D6A4F] transition"
+        >
+          <!-- Dynamically populated in beranda.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Impact Bar -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs">
+      <span class="text-xs font-medium text-[#6C6259]">Porsi Tersalurkan</span>
+      <div id="stat-portions" class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1">
+        3.820+
+      </div>
+      <p class="text-[11px] text-[#2D6A4F] font-semibold mt-1">
+        â†‘ 142 porsi minggu ini
+      </p>
+    </div>
+    <div class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs">
+      <span class="text-xs font-medium text-[#6C6259]">Makanan Diselamatkan</span>
+      <div id="stat-kg" class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1">
+        1.337 kg
+      </div>
+      <p class="text-[11px] text-[#2D6A4F] font-semibold mt-1">
+        Setara 48 ton sampah TPA
+      </p>
+    </div>
+    <div class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs">
+      <span class="text-xs font-medium text-[#6C6259]">Emisi CO2 Dicegah</span>
+      <div id="stat-co2" class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1">
+        3.342 kg
+      </div>
+      <p class="text-[11px] text-[#2D6A4F] font-semibold mt-1">
+        Emisi karbon rumah kaca
+      </p>
+    </div>
+    <div class="bg-white rounded-2xl p-5 border border-[#E8DFD1] shadow-2xs">
+      <span class="text-xs font-medium text-[#6C6259]">Titik Pojok Aktif</span>
+      <div class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D] mt-1">
+        24 Titik
+      </div>
+      <p class="text-[11px] text-[#2D6A4F] font-semibold mt-1">
+        Jabodetabek & Bandung
+      </p>
+    </div>
+  </div>
+
+  <!-- Urgent Rescue Foods -->
+  <div class="space-y-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-red-500 animate-ping"></span>
+        <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+          Penyelamatan Mendesak (&lt; 5 Jam)
+        </h2>
+      </div>
+      <button class="nav-explore-link text-xs sm:text-sm font-semibold text-[#2D6A4F] hover:underline cursor-pointer">
+        Lihat Semua â†’
+      </button>
+    </div>
+    <div id="urgent-food-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Dynamically populated in beranda.js -->
+    </div>
+  </div>
+
+  <!-- Categories Section -->
+  <div class="space-y-4">
+    <div>
+      <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+        Kategori Surplus Pangan
+      </h2>
+      <p class="text-xs sm:text-sm text-[#6C6259]">
+        Pilih jenis pangan yang ingin Anda selamatkan atau donasikan
+      </p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+      <button data-cat="makanan_berat" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ²</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Siap Santap</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Nasi kotak, lauk</p>
+      </button>
+      <button data-cat="roti_kue" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ¥</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Roti & Pastry</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Artisan bakery</p>
+      </button>
+      <button data-cat="sayur_buah" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ¥¬</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Sayur & Buah</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Panen tani segar</p>
+      </button>
+      <button data-cat="sembako" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ“¦</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Sembako</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Beras & minyak</p>
+      </button>
+      <button data-cat="minuman" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ§ƒ</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Minuman</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Jus segar alami</p>
+      </button>
+      <button data-cat="katering" class="home-cat-card bg-white p-4 rounded-2xl border border-[#E8DFD1] hover:border-[#2D6A4F] text-left transition shadow-2xs cursor-pointer">
+        <div class="text-2xl mb-2">ðŸ½ï¸</div>
+        <h3 class="font-bold text-sm text-[#24201D]">Katering & Hotel</h3>
+        <p class="text-[11px] text-[#7D7166] mt-0.5">Surplus banquet</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- Community Pantries Section -->
+  <div class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 space-y-6 shadow-xs">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8F5E9] text-xs font-semibold text-[#2D6A4F] mb-1.5">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+          <span>Titik Fisik Lemari & Kulkas Berbagi</span>
+        </div>
+        <h2 class="font-serif text-2xl font-bold text-[#24201D]">
+          Pojok Berbagi Komunitas Terdekat
+        </h2>
+        <p class="text-xs sm:text-sm text-[#6C6259]">
+          Drop-off surplus makanan atau ambil langsung di titik berikut
+        </p>
+      </div>
+      <button class="nav-explore-link text-xs sm:text-sm font-semibold text-[#2D6A4F] hover:underline cursor-pointer">
+        Buka Peta Lengkap â†’
+      </button>
+    </div>
+    <div id="home-pantry-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Dynamically populated in beranda.js -->
+    </div>
+  </div>
+</section>
+
+  </body>
+</html>

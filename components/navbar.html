@@ -1,0 +1,148 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Component</title>
+  </head>
+  <body>
+<!-- Top Header Desktop Navbar -->
+<header class="sticky top-0 z-40 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <button
+        id="btn-logo"
+        class="flex items-center gap-3 text-left group transition cursor-pointer"
+        aria-label="Beranda Pojok Makanan"
+      >
+        <div class="w-11 h-11 rounded-2xl bg-[#2D6A4F] flex items-center justify-center text-white shadow-md shadow-[#2D6A4F]/20 group-hover:bg-[#1B4332] transition">
+          <i data-lucide="utensils-crossed" class="w-6 h-6 text-[#E8F5E9]"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-2xl font-bold tracking-tight text-[#24201D]">
+              Pojok<span class="text-[#2D6A4F]">Makanan</span>
+            </span>
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2D6A4F]/10 text-[#2D6A4F]">
+              Peduli Pangan
+            </span>
+          </div>
+          <p class="text-xs text-[#6C6259] hidden sm:block">
+            Berbagi Rasa, Selamatkan Surplus Pangan
+          </p>
+        </div>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <nav id="desktop-nav" class="hidden md:flex items-center gap-1 lg:gap-2">
+        <button
+          data-page="beranda"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer bg-[#2D6A4F] text-white shadow-xs"
+        >
+          <span>Beranda</span>
+        </button>
+        <button
+          data-page="jelajahi"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+        >
+          <span>Jelajahi</span>
+        </button>
+        <button
+          data-page="donasi"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+        >
+          <span>Donasi</span>
+        </button>
+        <button
+          data-page="edukasi"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+        >
+          <span>Edukasi</span>
+        </button>
+        <button
+          data-page="pesan"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+        >
+          <span>Pesan</span>
+          <span id="nav-unread-badge" class="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-amber-500 text-white">1</span>
+        </button>
+        <button
+          data-page="akun"
+          class="nav-link relative flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition cursor-pointer text-[#594A38] hover:text-[#2D6A4F] hover:bg-[#EFE8DC]/60"
+        >
+          <span>Akun</span>
+        </button>
+      </nav>
+
+      <!-- Desktop Right Actions -->
+      <div class="hidden sm:flex items-center gap-3">
+        <div class="flex items-center gap-1.5 text-xs font-medium text-[#594A38] bg-[#EFE8DC]/60 px-3 py-1.5 rounded-full border border-[#D9CDBF]/50">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+          <span>Jakarta Selatan</span>
+        </div>
+        <button
+          id="btn-header-donate"
+          class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#2D6A4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#1B4332] active:scale-95 transition shadow-xs cursor-pointer"
+        >
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>Beri Donasi</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#FAF6F0]/95 backdrop-blur-lg border-t border-[#E8DFD1] px-2 py-1.5 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+  <div class="flex items-center justify-around">
+    <button
+      data-page="beranda"
+      class="mobile-nav-btn relative flex flex-col items-center py-1 px-2 rounded-xl transition cursor-pointer text-[#2D6A4F]"
+    >
+      <i data-lucide="home" class="w-5 h-5"></i>
+      <span class="text-[10px] font-bold mt-0.5">Beranda</span>
+    </button>
+    <button
+      data-page="jelajahi"
+      class="mobile-nav-btn relative flex flex-col items-center py-1 px-2 rounded-xl transition cursor-pointer text-[#7D7166]"
+    >
+      <i data-lucide="compass" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium mt-0.5">Jelajahi</span>
+    </button>
+    <button
+      data-page="donasi"
+      class="mobile-nav-btn flex flex-col items-center -mt-6 group cursor-pointer"
+      aria-label="Donasi Makanan"
+    >
+      <div class="w-13 h-13 rounded-full flex items-center justify-center text-white bg-[#2D6A4F] shadow-lg transition-transform active:scale-90 text-2xl font-bold">
+        <i data-lucide="plus" class="w-6 h-6"></i>
+      </div>
+      <span class="text-[11px] font-semibold mt-1 text-[#6C6259]">Donasi</span>
+    </button>
+    <button
+      data-page="edukasi"
+      class="mobile-nav-btn relative flex flex-col items-center py-1 px-2 rounded-xl transition cursor-pointer text-[#7D7166]"
+    >
+      <i data-lucide="book-open" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium mt-0.5">Edukasi</span>
+    </button>
+    <button
+      data-page="pesan"
+      class="mobile-nav-btn relative flex flex-col items-center py-1 px-2 rounded-xl transition cursor-pointer text-[#7D7166]"
+    >
+      <i data-lucide="message-circle" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium mt-0.5">Pesan</span>
+    </button>
+    <button
+      data-page="akun"
+      class="mobile-nav-btn relative flex flex-col items-center py-1 px-2 rounded-xl transition cursor-pointer text-[#7D7166]"
+    >
+      <i data-lucide="user" class="w-5 h-5"></i>
+      <span class="text-[10px] font-medium mt-0.5">Akun</span>
+    </button>
+  </div>
+</nav>
+
+  </body>
+</html>

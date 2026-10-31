@@ -1,0 +1,8 @@
+{
+  "name": "Pojok Makanan",
+  "description": "Platform berbagi makanan, donasi surplus pangan, edukasi cegah food waste, dan komunitas peduli pangan dengan nuansa hangat krem dan hijau.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

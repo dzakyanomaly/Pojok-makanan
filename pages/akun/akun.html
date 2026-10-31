@@ -1,0 +1,221 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Component</title>
+  </head>
+  <body>
+<section id="page-akun" class="page-view space-y-8 pb-16">
+  <!-- User Profile Card -->
+  <div
+    class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 shadow-xs relative overflow-hidden"
+  >
+    <div
+      class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6"
+    >
+      <img
+        id="user-display-avatar"
+        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
+        alt="Avatar"
+        class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl object-cover border-4 border-[#FAF6F0] shadow-md"
+      />
+      <div class="flex-1 text-center sm:text-left space-y-2">
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+        >
+          <div>
+            <h1
+              id="user-display-name"
+              class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D]"
+            >
+              Dzaky Muthohary
+            </h1>
+            <span
+              id="user-display-role"
+              class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#E8F5E9] text-xs font-bold text-[#2D6A4F] mt-1"
+            >
+              âœ¨ Pahlawan Pangan Komunitas - Level 3
+            </span>
+          </div>
+          <button
+            id="btn-open-edit-profile"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#D9CDBF] text-xs font-semibold text-[#594A38] hover:bg-[#FAF6F0] transition cursor-pointer self-center sm:self-auto"
+          >
+            <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+            <span>Ubah Profil</span>
+          </button>
+        </div>
+        <div
+          class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-[#6C6259] pt-1"
+        >
+          <span id="user-display-email" class="flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>dzakymuthohary@gmail.com</span>
+          </span>
+          <span id="user-display-phone" class="flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>0812-9876-5432</span>
+          </span>
+          <span id="user-display-city" class="flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#2D6A4F]"></i>
+            <span>Jakarta Selatan</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Counters -->
+    <div
+      class="mt-8 pt-6 border-t border-[#F0EAE1] grid grid-cols-2 lg:grid-cols-4 gap-4"
+    >
+      <div class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1]">
+        <span class="text-[11px] font-semibold text-[#6C6259]"
+          >Total Pangan Selamat</span
+        >
+        <div
+          id="profile-stat-kg"
+          class="font-serif text-2xl font-bold text-[#24201D] mt-1"
+        >
+          38.5 kg
+        </div>
+        <p class="text-[10px] text-[#2D6A4F] font-semibold mt-0.5">
+          Surplus terselamatkan
+        </p>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1]">
+        <span class="text-[11px] font-semibold text-[#6C6259]"
+          >Porsi Dibagikan</span
+        >
+        <div
+          id="profile-stat-portions"
+          class="font-serif text-2xl font-bold text-[#24201D] mt-1"
+        >
+          110 Porsi
+        </div>
+        <p class="text-[10px] text-[#2D6A4F] font-semibold mt-0.5">
+          Dinikmati sesama
+        </p>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1]">
+        <span class="text-[11px] font-semibold text-[#6C6259]"
+          >Jejak CO2 Dicegah</span
+        >
+        <div
+          id="profile-stat-co2"
+          class="font-serif text-2xl font-bold text-[#24201D] mt-1"
+        >
+          96.2 kg
+        </div>
+        <p class="text-[10px] text-[#2D6A4F] font-semibold mt-0.5">
+          Gas emisi metana
+        </p>
+      </div>
+      <div class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1]">
+        <span class="text-[11px] font-semibold text-[#6C6259]"
+          >Poin Kebaikan</span
+        >
+        <div
+          id="profile-stat-points"
+          class="font-serif text-2xl font-bold text-[#24201D] mt-1"
+        >
+          480 Poin
+        </div>
+        <p class="text-[10px] text-[#6C6259] font-medium mt-0.5">
+          Tingkat kontributor aktif
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- History & Badges Section -->
+  <div
+    class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-8 space-y-6 shadow-xs"
+  >
+    <div class="flex items-center gap-2 border-b border-[#F0EAE1] pb-3">
+      <h3 class="font-serif text-xl font-bold text-[#24201D]">
+        Riwayat & Lencana Kebaikan
+      </h3>
+    </div>
+    <div class="space-y-3">
+      <div
+        class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+      >
+        <div>
+          <span class="font-bold text-xs text-[#24201D]"
+            >15 Box Nasi Bento Sayur & Tahu Tempe</span
+          >
+          <p class="text-xs text-[#6C6259]">
+            Disalurkan ke: Pojok Berbagi Tebet Ramah Warga â€¢ 14 Okt 2026
+          </p>
+        </div>
+        <span
+          class="font-bold text-xs text-[#2D6A4F] bg-white px-3 py-1 rounded-lg border border-[#D9CDBF]"
+        >
+          5.2 kg â€¢ Selesai âœ“
+        </span>
+      </div>
+      <div
+        class="p-4 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+      >
+        <div>
+          <span class="font-bold text-xs text-[#24201D]"
+            >Paket Sarapan Berkah Dhuafa (Dana)</span
+          >
+          <p class="text-xs text-[#6C6259]">
+            Penyaluran: Dapur Solidaritas Cikini â€¢ 11 Okt 2026
+          </p>
+        </div>
+        <span
+          class="font-bold text-xs text-[#2D6A4F] bg-white px-3 py-1 rounded-lg border border-[#D9CDBF]"
+        >
+          Rp 25.000 â€¢ Selesai âœ“
+        </span>
+      </div>
+    </div>
+
+    <!-- Badges Collection -->
+    <div class="pt-4 border-t border-[#F0EAE1]">
+      <h4
+        class="font-bold text-xs text-[#24201D] uppercase tracking-wider mb-3"
+      >
+        Lencana Penghargaan
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+        <div
+          class="p-3.5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-1"
+        >
+          <div class="text-2xl">ðŸŒ±</div>
+          <div class="font-bold text-xs text-[#24201D]">Penyelamat Pemula</div>
+          <p class="text-[10px] text-[#7D7166]">Donasi pertama berhasil</p>
+        </div>
+        <div
+          class="p-3.5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-1"
+        >
+          <div class="text-2xl">ðŸŒ</div>
+          <div class="font-bold text-xs text-[#24201D]">Zero Waste Warrior</div>
+          <p class="text-[10px] text-[#7D7166]">Cegah > 50kg CO2e</p>
+        </div>
+        <div
+          class="p-3.5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-1"
+        >
+          <div class="text-2xl">ðŸ¤</div>
+          <div class="font-bold text-xs text-[#24201D]">Sahabat Dhuafa</div>
+          <p class="text-[10px] text-[#7D7166]">Bagi > 100 porsi makan</p>
+        </div>
+        <div
+          class="p-3.5 rounded-2xl bg-[#FAF6F0] border border-[#E8DFD1] space-y-1"
+        >
+          <div class="text-2xl">ðŸ›¡ï¸</div>
+          <div class="font-bold text-xs text-[#24201D]">
+            Penderma Terverifikasi
+          </div>
+          <p class="text-[10px] text-[#7D7166]">Higienitas 100% terjaga</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </body>
+</html>

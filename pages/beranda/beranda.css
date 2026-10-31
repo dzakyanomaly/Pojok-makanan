@@ -1,0 +1,19 @@
+/* Styles khusus untuk Halaman Beranda */
+
+#hero-featured-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+#hero-featured-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(45, 106, 79, 0.12);
+}
+
+.home-cat-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-cat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(45, 106, 79, 0.08);
+}

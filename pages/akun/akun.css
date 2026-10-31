@@ -1,0 +1,9 @@
+/* Styles khusus untuk Halaman Akun */
+
+#user-display-avatar {
+  transition: transform 0.25s ease;
+}
+
+#user-display-avatar:hover {
+  transform: scale(1.03);
+}

@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Pojok Makanan - Custom Stylesheet
+   Warna Utama: Krem (#FAF6F0) & Hijau Hutan (#2D6A4F)
+   ========================================================================== */
+
+:root {
+  --pm-cream: #FAF6F0;
+  --pm-cream-light: #FDFBF7;
+  --pm-cream-dark: #EFE8DC;
+  --pm-green: #2D6A4F;
+  --pm-green-dark: #1B4332;
+  --pm-green-light: #52B788;
+  --pm-green-soft: #E8F5E9;
+  --pm-text: #24201D;
+  --pm-muted: #6C6259;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--pm-cream);
+  color: var(--pm-text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CDBF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8A896;
+}
+
+/* Smooth Fade In Transitions */
+.page-view {
+  animation: pageFadeIn 0.25s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-backdrop {
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Utility Helper */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
