@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Donasikan Custom Stylesheet
+   ========================================================================== */
+
+.fund-card {
+  transition: all 0.2s ease;
+}
+
+.fund-card:hover {
+  transform: translateY(-2px);
+}
+
+#donate-food-container form input:focus,
+#donate-food-container form select:focus {
+  border-color: #2D6A4F;
+  background-color: #ffffff;
+}

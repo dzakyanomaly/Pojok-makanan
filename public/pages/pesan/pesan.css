@@ -1,0 +1,22 @@
+/* Styles khusus untuk Halaman Pesan / Chat */
+
+.chat-thread-item {
+  transition: background-color 0.15s ease;
+}
+
+.chat-bubble-user {
+  background-color: #2D6A4F;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble-donor {
+  background-color: #ffffff;
+  color: #24201D;
+  border: 1px solid #E8DFD1;
+  border-bottom-left-radius: 4px;
+}
+
+.quick-reply-btn {
+  transition: all 0.15s ease;
+}

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Masuk ke Akun</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { 'pm-cream': '#FAF6F0', 'pm-green': '#2D6A4F', 'pm-text': '#24201D' },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../common/common.css" />
+    <link rel="stylesheet" href="Login.css" />
+  </head>
+  <body class="bg-[#FAF6F0] text-[#24201D] min-h-screen flex flex-col justify-between selection:bg-[#2D6A4F] selection:text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E8DFD1] shadow-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20">
+          <a href="../Homepage/Homepage.html" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-2xl bg-[#2D6A4F] flex items-center justify-center text-white shadow-md group-hover:bg-[#1B4332] transition">
+              <i data-lucide="utensils-crossed" class="w-5 h-5 text-[#E8F5E9]"></i>
+            </div>
+            <span class="font-serif text-xl font-bold text-[#24201D]">Pojok<span class="text-[#2D6A4F]">Makanan</span></span>
+          </a>
+          <a href="../Homepage/Homepage.html" class="text-xs sm:text-sm font-semibold text-[#2D6A4F] hover:underline flex items-center gap-1">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Kembali ke Beranda</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1 max-w-md w-full mx-auto px-4 py-10 sm:py-16">
+      <div class="bg-white rounded-3xl border border-[#E8DFD1] p-6 sm:p-10 shadow-xl space-y-6">
+
+        <!-- Icon & Judul -->
+        <div class="text-center space-y-3">
+          <div class="w-16 h-16 rounded-2xl bg-[#E8F5E9] text-[#2D6A4F] flex items-center justify-center mx-auto shadow-inner">
+            <i data-lucide="user-check" class="w-8 h-8"></i>
+          </div>
+          <h1 class="font-serif text-2xl sm:text-3xl font-bold text-[#24201D]">Masuk ke Profil</h1>
+          <p class="text-xs sm:text-sm text-[#6C6259]">
+            Masukkan nama dan kata sandi Anda untuk mulai mendonasikan atau mengklaim makanan.
+          </p>
+        </div>
+
+        <!-- Banner redirect -->
+        <div id="login-alert-banner" class="hidden p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-start gap-2.5">
+          <i data-lucide="alert-circle" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+          <span id="login-alert-msg">Silakan masuk terlebih dahulu untuk melanjutkan.</span>
+        </div>
+
+        <!-- Error msg -->
+        <div id="login-error-msg" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-start gap-2">
+          <i data-lucide="x-circle" class="w-4 h-4 shrink-0 mt-0.5"></i>
+          <span>Nama atau kata sandi salah.</span>
+        </div>
+
+        <!-- Success msg -->
+        <div id="login-success-msg" class="hidden p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 shrink-0 mt-0.5"></i>
+          <span>Berhasil masuk!</span>
+        </div>
+
+        <!-- Form -->
+        <form id="login-form" class="space-y-4">
+          <!-- Nama -->
+          <div>
+            <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+              Nama Lengkap <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <i data-lucide="user" class="w-4 h-4 text-[#9D8E82]"></i>
+              </span>
+              <input
+                type="text"
+                id="login-name"
+                required
+                autocomplete="username"
+                placeholder="Contoh: Budi Santoso"
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div>
+            <label class="block text-xs font-bold text-[#3D332A] uppercase tracking-wider mb-1.5">
+              Kata Sandi <span class="text-red-500">*</span>
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <i data-lucide="lock" class="w-4 h-4 text-[#9D8E82]"></i>
+              </span>
+              <input
+                type="password"
+                id="login-password"
+                required
+                autocomplete="current-password"
+                placeholder="Masukkan kata sandi"
+                class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+              />
+              <button
+                type="button"
+                id="btn-toggle-pwd"
+                class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#9D8E82] hover:text-[#24201D]"
+              >
+                <i data-lucide="eye" class="w-4 h-4" id="eye-icon"></i>
+              </button>
+            </div>
+            <p class="text-[11px] text-[#6C6259] mt-1.5">
+              Pertama kali? Masukkan nama dan buat kata sandi baru — akun langsung terbuat otomatis.
+            </p>
+          </div>
+
+          <!-- Info keuntungan -->
+          <div class="p-3.5 rounded-xl bg-[#FAF6F0] border border-[#E8DFD1] text-[11px] text-[#594A38] space-y-1.5">
+            <div class="flex items-center gap-1.5 font-bold text-[#2D6A4F]">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>Setelah masuk, kamu bisa:</span>
+            </div>
+            <ul class="list-disc list-inside space-y-0.5 text-[#6C6259] pl-1">
+              <li>Donasikan makanan surplus & dapat poin (+10 poin per kg).</li>
+              <li>Klaim makanan gratis layak konsumsi di sekitarmu.</li>
+              <li>Ubah nama, foto profil, dan data akun kapan saja.</li>
+            </ul>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="w-full py-3 px-6 rounded-xl bg-[#2D6A4F] text-white font-bold text-sm hover:bg-[#1B4332] active:scale-95 transition shadow-sm cursor-pointer flex items-center justify-center gap-2"
+          >
+            <i data-lucide="log-in" class="w-4 h-4"></i>
+            <span>Masuk Sekarang</span>
+          </button>
+        </form>
+
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-[#E8DFD1] py-6 text-center text-xs text-[#6C6259]">
+      <p>© 2026 Pojok Makanan Indonesia • Gerakan Peduli Pangan & Nol Food Waste</p>
+    </footer>
+
+    <script src="../common/sharedData.js"></script>
+    <script src="Login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Edukasi Custom Stylesheet
+   ========================================================================== */
+
+.shelf-select-btn {
+  transition: all 0.2s ease;
+}
+
+.article-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-option-label {
+  transition: all 0.2s ease;
+}
+
+.quiz-option-label:hover {
+  background-color: #FAF6F0;
+  border-color: #2D6A4F;
+}

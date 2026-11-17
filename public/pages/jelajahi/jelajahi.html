@@ -1,0 +1,132 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pojok Makanan - Component</title>
+  </head>
+  <body>
+<section id="page-jelajahi" class="page-view space-y-6 pb-16">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div>
+      <span class="text-xs font-bold uppercase tracking-wider text-[#2D6A4F]">Katalog Surplus Pangan</span>
+      <h1 class="font-serif text-3xl font-bold text-[#24201D] mt-0.5">
+        Jelajahi Makanan Tersedia
+      </h1>
+      <p class="text-sm text-[#6C6259] mt-1">
+        Temukan donasi makanan segar layak konsumsi dan titik lemari berbagi di sekitarmu.
+      </p>
+    </div>
+    <!-- View Switcher: Grid vs Map -->
+    <div class="inline-flex items-center p-1 bg-[#EFE8DC]/70 rounded-xl border border-[#D9CDBF]/70 self-start md:self-auto">
+      <button
+        id="view-mode-grid"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer bg-white text-[#2D6A4F] shadow-xs"
+      >
+        <i data-lucide="grid" class="w-3.5 h-3.5"></i>
+        <span>Kartu (<span id="explore-count">0</span>)</span>
+      </button>
+      <button
+        id="view-mode-map"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer text-[#6C6259] hover:text-[#24201D]"
+      >
+        <i data-lucide="map" class="w-3.5 h-3.5"></i>
+        <span>Peta Titik Pantau</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search and Filters Bar -->
+  <div class="bg-white p-4 sm:p-5 rounded-2xl border border-[#E8DFD1] shadow-2xs space-y-4">
+    <div class="relative">
+      <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#7D7166]">
+        <i data-lucide="search" class="w-4 h-4"></i>
+      </span>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Cari makanan (misal: ayam bakar, roti, sayur bayam, katering)..."
+        class="w-full pl-10 pr-9 py-2.5 rounded-xl border border-[#D9CDBF] bg-[#FAF6F0]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6A4F] text-[#24201D]"
+      />
+    </div>
+
+    <!-- Category filter buttons -->
+    <div id="explore-cat-chips" class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <button data-cat="semua" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#2D6A4F] text-white">
+        Semua Kategori
+      </button>
+      <button data-cat="makanan_berat" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#FAF6F0] text-[#594A38] border border-[#E8DFD1]">
+        Siap Santap
+      </button>
+      <button data-cat="roti_kue" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#FAF6F0] text-[#594A38] border border-[#E8DFD1]">
+        Roti & Pastry
+      </button>
+      <button data-cat="sayur_buah" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#FAF6F0] text-[#594A38] border border-[#E8DFD1]">
+        Sayur & Buah
+      </button>
+      <button data-cat="sembako" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#FAF6F0] text-[#594A38] border border-[#E8DFD1]">
+        Sembako
+      </button>
+      <button data-cat="minuman" class="cat-chip px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition cursor-pointer bg-[#FAF6F0] text-[#594A38] border border-[#E8DFD1]">
+        Minuman
+      </button>
+    </div>
+
+    <!-- Secondary Filters -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-[#F0EAE1] text-xs">
+      <div class="flex flex-wrap items-center gap-4">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="filter-halal" class="w-4 h-4 rounded text-[#2D6A4F] focus:ring-[#2D6A4F] border-[#D9CDBF]" />
+          <span class="font-medium text-[#4A4036]">Halal Terverifikasi</span>
+        </label>
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="filter-urgent" class="w-4 h-4 rounded text-red-600 focus:ring-red-500 border-[#D9CDBF]" />
+          <span class="font-medium text-red-700">Mendesak (&lt; 5 Jam)</span>
+        </label>
+      </div>
+      <div class="flex items-center gap-2 text-[#594A38]">
+        <span>Radius Maks:</span>
+        <div id="distance-buttons" class="inline-flex rounded-lg border border-[#D9CDBF] bg-[#FAF6F0] p-0.5">
+          <button data-dist="2" class="dist-btn px-2.5 py-0.5 rounded-md text-[11px] font-semibold text-[#6C6259]">
+            2 km
+          </button>
+          <button data-dist="5" class="dist-btn px-2.5 py-0.5 rounded-md text-[11px] font-semibold text-[#6C6259]">
+            5 km
+          </button>
+          <button data-dist="10" class="dist-btn px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-[#2D6A4F] text-white">
+            10 km
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Food Cards Grid -->
+  <div id="explore-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- Dynamically populated in jelajahi.js -->
+  </div>
+
+  <!-- Simulated Map View Container -->
+  <div id="explore-map-container" class="bg-white rounded-3xl border border-[#E8DFD1] overflow-hidden shadow-xs hidden">
+    <div class="p-4 bg-[#FAF6F0] border-b border-[#E8DFD1] flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-[#24201D]">Area Pantau:</span>
+        <span class="px-2.5 py-1 rounded-full bg-white border border-[#D9CDBF] text-[#2D6A4F] font-semibold">ðŸ“ Jakarta Selatan</span>
+      </div>
+      <div class="flex items-center gap-4 text-[#6C6259]">
+        <span class="flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-full bg-[#2D6A4F]"></span> Titik Surplus Makanan
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-full bg-amber-600"></span> Lemari Berbagi RW
+        </span>
+      </div>
+    </div>
+    <div id="interactive-map-surface" class="relative h-[480px] bg-[#EBE5DA] overflow-hidden p-6">
+      <!-- Pins dynamically injected in jelajahi.js -->
+    </div>
+  </div>
+</section>
+
+  </body>
+</html>
